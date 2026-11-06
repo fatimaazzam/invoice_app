@@ -19,4 +19,12 @@ func main() {
 
 	nameFour := "Moses"
 	fmt.Println(nameFour) // Cannot be used out of teh function
+
+	// integers
+	var ageOne int = 20
+	var ageTwo int = 30
+	ageThree := 40
+
+	fmt.Println(ageOne, ageTwo, ageThree)
+
 }

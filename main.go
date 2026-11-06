@@ -34,4 +34,10 @@ func main() {
 	var numTwo int8 = -128
 	var numThree uint16 = 256
 	fmt.Println(numOne, numTwo, numThree)
+
+	// Floats
+	var scoreOne float32 = 25.98
+	var scoreTwo float64 = 323123123123.2
+	scoreThree := 1.5 // The default is float64
+	fmt.Println(scoreOne, scoreTwo, scoreThree)
 }

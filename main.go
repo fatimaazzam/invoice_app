@@ -27,4 +27,11 @@ func main() {
 
 	fmt.Println(ageOne, ageTwo, ageThree)
 
+	// bits & memory
+	// var numOne int8 = 215 THIS declaration is wrong we can not assign numOne
+	// to 215 because we use int8 and this will become out of the range, instead we can use int16
+	var numOne int8 = 25
+	var numTwo int8 = -128
+	var numThree uint16 = 256
+	fmt.Println(numOne, numTwo, numThree)
 }

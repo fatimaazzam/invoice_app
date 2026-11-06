@@ -1,9 +1,22 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
+// var someName := "Sarah" THIS is wrong we cannot use := to declare variable out of teh function
 func main() {
-	fmt.Println("Hello World!")
+
+	//Strings
+	var nameOne string = "mario"
+	var nameTwo = "John"
+	var nameThree string
+
+	fmt.Println(nameOne, nameTwo, nameThree)
+
+	nameOne = "Nohu"
+	nameThree = "Lona"
+
+	fmt.Println(nameOne, nameTwo, nameThree)
+
+	nameFour := "Moses"
+	fmt.Println(nameFour) // Cannot be used out of teh function
 }

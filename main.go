@@ -4,40 +4,33 @@ import "fmt"
 
 // var someName := "Sarah" THIS is wrong we cannot use := to declare variable out of teh function
 func main() {
+	//Print
+	fmt.Print("hello, ")
+	fmt.Print("world! \n")
+	fmt.Print("new line \n")
 
-	//Strings
-	var nameOne string = "mario"
-	var nameTwo = "John"
-	var nameThree string
+	//Add new Line automatically
+	fmt.Println("Hello ninjas!")
+	fmt.Println("Goodbye ninjas!")
 
-	fmt.Println(nameOne, nameTwo, nameThree)
+	// print variables
+	age := 20
+	name := "shone"
+	println("my age is", age, "and my name is", name)
 
-	nameOne = "Nohu"
-	nameThree = "Lona"
+	// Printf() Formating string %v default specifier
+	fmt.Printf("my age is %v and my name is %v\n", age, name)
+	// %q will not work for age since it works for prints a string surrounded by quotation marks
+	fmt.Printf("my age is %q and my name is %q\n", age, name)
 
-	fmt.Println(nameOne, nameTwo, nameThree)
+	// Print the type of veriable
+	fmt.Printf("Age of type %T\n", age)
 
-	nameFour := "Moses"
-	fmt.Println(nameFour) // Cannot be used out of teh function
+	// Print floats
+	fmt.Printf("you scored %f points \n", 225.55)
+	fmt.Printf("you scored %0.1f points \n", 225.55)
 
-	// integers
-	var ageOne int = 20
-	var ageTwo int = 30
-	ageThree := 40
-
-	fmt.Println(ageOne, ageTwo, ageThree)
-
-	// bits & memory
-	// var numOne int8 = 215 THIS declaration is wrong we can not assign numOne
-	// to 215 because we use int8 and this will become out of the range, instead we can use int16
-	var numOne int8 = 25
-	var numTwo int8 = -128
-	var numThree uint16 = 256
-	fmt.Println(numOne, numTwo, numThree)
-
-	// Floats
-	var scoreOne float32 = 25.98
-	var scoreTwo float64 = 323123123123.2
-	scoreThree := 1.5 // The default is float64
-	fmt.Println(scoreOne, scoreTwo, scoreThree)
+	// Sprinttf (save formated strings)
+	var str = fmt.Sprintf("my age is %v and my name is %v\n", age, name)
+	fmt.Println("The saved string is:", str)
 }

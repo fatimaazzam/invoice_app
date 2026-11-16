@@ -1,32 +1,42 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+	"strings"
+)
 
 // var someName := "Sarah" THIS is wrong we cannot use := to declare variable out of teh function
 func main() {
-	// var ages [3]int = [3]int{20, 25, 30}
-	ages := [3]int{20, 25, 30}
-	var names = [4]string{"yoshi", "mario", "sarah", "bowser"}
-	names[1] = "luigi"
-	fmt.Println(ages, len(ages))
-	fmt.Println(names, len(names))
+	greeting := "Hello there friends!"
+	fmt.Println(strings.Contains(greeting, "Hello"))
 
-	// Slicing (use under the hood)
-	var scores = []int{100, 50, 60}
-	scores[2] = 25
-	// The following will return new slice
-	//append(scores, 85)
+	// using replace does not change the original string
+	fmt.Println(strings.ReplaceAll(greeting, "Hello", "Hi"))
 
-	scores = append(scores, 85)
-	fmt.Println(scores, len(scores))
+	fmt.Println("original string value =", greeting)
 
-	// slice ranges
-	rangeOne := names[1:3]
-	rangeTwo := names[2:]
-	rangeThree := names[:3]
-	fmt.Println(rangeOne, rangeTwo, rangeThree)
+	fmt.Println(strings.ToUpper(greeting))
+	fmt.Println(strings.Index(greeting, "ll"))
+	fmt.Println(strings.Split(greeting, " "))
 
-	rangeOne = append(rangeOne, "koopa")
-	fmt.Println(rangeOne)
+	// Sorting
+	ages := []int{45, 20, 35, 30, 75, 60, 50, 25}
+	sort.Ints(ages) // it alter the original slice and sort it
+	fmt.Println(ages)
+
+	// Return the index of teh sorted slice
+	index := sort.SearchInts(ages, 30)
+	fmt.Println(index)
+
+	// If the number does not exist it return index not exist
+	index2 := sort.SearchInts(ages, 90)
+	fmt.Println(index2) // it will return 8 which is not exist in the previous slice
+
+	// Sort Strings
+	names := []string{"yoshi", "mario", "peach", "bowser", "luigi"}
+	sort.Strings(names)
+	fmt.Println(names)                              // it alter the original slice and sort it
+	fmt.Println(sort.SearchStrings(names, "mario")) // it will print the index
 
 }

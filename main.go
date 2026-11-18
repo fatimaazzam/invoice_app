@@ -2,36 +2,28 @@ package main
 
 import "fmt"
 
+func updateName(x string) string {
+	x = "wedge"
+	return x
+}
+
+func updateMenu(y map[string]float64) {
+	y["coffee"] = 2.99
+}
 func main() {
+	// Group A types -> strings, ints, bools, floats, array, struct (NON-POINTERS VALUES)
+	name := "tifa"
+	name = updateName(name)
+
+	fmt.Println(name)
+
+	// Group B types -> slice, maps, functions (POINTERS WRAPPER VALUES)
 	menu := map[string]float64{
-		"soup":           4.99,
-		"pie":            7.99,
-		"salad":          6.99,
-		"toffee pudding": 3.55,
+		"pie":       5.95,
+		"ice cream": 3.99,
 	}
 
+	updateMenu(menu)
 	fmt.Println(menu)
-	fmt.Println(menu["pie"])
 
-	// Looping maps
-	for k, v := range menu {
-		fmt.Println(k, "_", v)
-	}
-
-	// integers as key type
-	phonebook := map[int]string{
-		123456: "mario",
-		543790: "luigi",
-		987653: "peach",
-	}
-
-	fmt.Println(phonebook)
-	fmt.Println(phonebook[123456])
-
-	// Update the value inside the map
-	phonebook[987653] = "bowser"
-	fmt.Println(phonebook)
-
-	phonebook[543790] = "yoshi"
-	fmt.Println(phonebook)
 }

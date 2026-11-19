@@ -12,7 +12,7 @@ type bill struct {
 func newBill(name string) bill {
 	b := bill{
 		name:  name,
-		items: map[string]float64{"pie": 5.99, "cake": 3.99},
+		items: map[string]float64{},
 		tip:   0,
 	}
 	return b
@@ -30,6 +30,19 @@ func (b bill) format() string {
 		fs += fmt.Sprintf("%-25v ...$%v \n", k+":", v) // -25 it adds spaces at the right just for alignments
 		total += v
 	}
+	fs += fmt.Sprintf("%-25v ...$%v \n", "Tip:", b.tip)
 	fs += fmt.Sprintf("%-25v ... $%0.2f", "Total:", total) //-25 it adds spaces at the right just for alignments
 	return fs
+}
+
+// Update the bill
+// Pointers is used since we want to original bill not the copy
+func (b *bill) updateTip(tip float64) {
+	b.tip = tip
+
+}
+
+// add item to the bill
+func (b *bill) addItem(name string, price float64) {
+	b.items[name] = price
 }
